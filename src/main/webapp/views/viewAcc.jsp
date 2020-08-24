@@ -85,7 +85,7 @@
          </table>
 		</c:when>
 		<c:otherwise>
-			<h2 style="color: red; text-align: center">No Admin or Case Worker found...!</h2>
+			<h2 style="color: red; text-align: center">No Admin or Case Worker Selected...!</h2>
 		</c:otherwise>
 	</c:choose>
 </body>

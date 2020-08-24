@@ -3,6 +3,8 @@ package com.ashokit.repo;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -16,7 +18,12 @@ public interface AccountMgmtRepository extends JpaRepository<AdminAccEntity, Ser
           public List<AdminAccEntity> findByRole(String role);
           
           @Modifying
-          @Query(value= "UPDATE AdminAccEntity set deleteSwitch='Y' where accountId=?",nativeQuery=true)
+          @Transactional
+          @Query(value= "UPDATE AdminAccEntity SET deleteSwitch='Y' where accountId= :id")
           public void softDelete(Integer id);
           
+          @Modifying
+          @Transactional
+          @Query(value= "UPDATE AdminAccEntity SET deleteSwitch='N' where accountId= :id")
+          public void activateAcc(Integer id);
 }

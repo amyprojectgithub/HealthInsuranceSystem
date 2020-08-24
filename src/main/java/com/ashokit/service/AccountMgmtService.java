@@ -16,4 +16,6 @@ public interface AccountMgmtService {
 	public AdminAcc  getAccountById(Integer id);
 	
 	public void softDelete(Integer id);
+	
+	public void activateAcc(Integer id);
 }

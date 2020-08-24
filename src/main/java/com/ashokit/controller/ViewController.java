@@ -32,9 +32,16 @@ public class ViewController {
 	}
 
 	@GetMapping("/deleteAcc")
-	public String deleteMe(@RequestParam("id")Integer id,Model model) {
+	public String deleteMe(@RequestParam("id")Integer id) {
 		 service.softDelete(id);
 		return "redirect:/view";
+	}
+	
+	@GetMapping("/activateAcc")
+	public String activateMe(@RequestParam("id")Integer id) {
+		service.activateAcc(id);
+		return "redirect:/view";
+		
 	}
 	
 }

@@ -144,5 +144,14 @@ public class AccountMgmtServiceImpl implements AccountMgmtService {
 			throw new HisException("Soft Deletion failed");
 		}
 	}
+	@Override
+	public void activateAcc(Integer id) {
+		try {
+			accMgmtRepo.activateAcc(id);
+		}catch (Exception e) {
+			logger.error("Account activation failed::"+e.getMessage());
+			throw new HisException("Account activation failed");
+		}
+	}
 
 }
