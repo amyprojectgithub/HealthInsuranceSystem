@@ -3,8 +3,6 @@ server:
   servlet:
     context-path: /HIS
 spring:
-  application:
-     name: INSURANCE-PROJ
   datasource:
     username: sa
     password:
