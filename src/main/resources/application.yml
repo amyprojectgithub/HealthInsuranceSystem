@@ -4,7 +4,7 @@ server:
     context-path: /HIS
 spring:
   application:
-     name: INSURANCE-PROJ
+     name: HEALTH-INSURANCE
   datasource:
     username: sa
     password:
@@ -35,8 +35,10 @@ spring:
           timeout: 5000
           writetimeout: 5000
     username: amyprojectgithub@gmail.com
-logging:  level:
-    root: INFO    com:
+logging:
+  level:
+    root: INFO
+    com:
     ashokit:
        service: DEBUG
     
